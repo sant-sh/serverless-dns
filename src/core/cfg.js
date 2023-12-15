@@ -8,6 +8,7 @@
 /* eslint-disabled */
 // eslint, no import-assert: github.com/eslint/eslint/discussions/15305
 import u6cfg from "../u6-basicconfig.json" assert { type: 'json' };
+import u6filetag from "../u6-filetag.json" assert { type: 'json' };
 
 export function timestamp() {
     return u6cfg.timestamp;
@@ -29,3 +30,14 @@ export function orig() {
   return u6cfg;
 }
 
+export function filetag() {
+  return u6filetag;
+}
+
+export function tdmd5() {
+  return u6cfg.tdmd5;
+}
+
+export function rdmd5() {
+  return u6cfg.rdmd5;
+}

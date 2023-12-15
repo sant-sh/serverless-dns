@@ -14,6 +14,7 @@ export default class IOState {
   constructor() {
     this.flag = "";
     this.decodedDnsPacket = this.emptyDecodedDnsPacket();
+    /** @type {Response} */
     this.httpResponse = undefined;
     this.isException = false;
     this.exceptionStack = undefined;
@@ -30,6 +31,10 @@ export default class IOState {
   id(rxid, region) {
     this.log.tag(rxid);
     this.region = region;
+  }
+
+  input(packet) {
+    this.decodedDnsPacket = packet;
   }
 
   gatewayAnswersOnly(ip4, ip6) {
